@@ -27,19 +27,19 @@ add(1, 2).then(function (result) {
   console.log(result) // 3
 })
 
-// Supporst promisify the methods of an object
+// Supports promisify the methods of an object
 var obj = {
   add: function(a, b, cb) {
     return cb(null, a + b)
   },
-  sub: function(a, b, cb) {
-    return cb(null, a - b)
+  double: function(a, cb) {
+    return this.add(a, a, cb)
   }
 }
 
 obj = promisify(obj)
-obj.add(1,2).then(function(sum) {
-  console.log(sum) // 3
+obj.double(2).then(function(doubled) {
+  console.log(doubled) // 4
 })
 
 ```
