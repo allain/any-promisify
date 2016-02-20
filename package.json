@@ -1,0 +1,31 @@
+{
+  "name": "any-promisify",
+  "version": "1.0.0",
+  "description": "any-promise based promisify",
+  "main": "index.js",
+  "scripts": {
+    "test": "blue-tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allain/any-promisify.git"
+  },
+  "keywords": [
+    "any-promise",
+    "promise",
+    "promisify"
+  ],
+  "author": "Allain Lalonde <allain.lalonde@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allain/any-promisify/issues"
+  },
+  "homepage": "https://github.com/allain/any-promisify#readme",
+  "dependencies": {
+    "any-promise": "^1.1.0",
+    "get-parameter-names": "^0.2.0"
+  },
+  "devDependencies": {
+    "blue-tape": "^0.2.0"
+  }
+}
