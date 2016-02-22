@@ -113,3 +113,20 @@ test('promisified objects have "this" methods available to them', function(t) {
     t.equal(results[1], 4);
   })
 })
+
+test('promisified objects have methods defined in prototype chain', function(t) {
+  function A() {
+
+  }
+
+  A.prototype.echo = function(val, cb) {
+    cb(null, val)
+  }
+
+  var a = new A()
+  a = promisify(a)
+
+  return a.echo(10).then(function(val) {
+    t.equal(val, 10)
+  })
+})

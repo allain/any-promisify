@@ -40,11 +40,11 @@ function promisifyAll(obj) {
 
   var result = {}
 
-  Object.keys(obj).forEach(function(field) {
+  for (var field in obj) {
     var val = obj[field]
 
     result[field] = typeof val === 'function' ? promisify(val, obj) : val
-  })
+  }
 
   return result
 }
